@@ -43,6 +43,7 @@ public class ChatController {
 			// TODO Auto-generated method stub
 			System.out.println("Disconnected from /chat namespace:"+client.getSessionId());
 			chatUsers.remove(client);
+			nsp.getBroadcastOperations().sendEvent("online-users", chatUsers);
 		}
 	};
 	
@@ -62,7 +63,7 @@ public class ChatController {
 		public void onData(SocketIOClient client, User user, AckRequest ack) throws Exception {
 			// TODO Auto-generated method stub
 			chatUsers.put(client, user);
-			System.out.println("user joined /:"+user.getUser_name());
+			System.out.println("/User joined:"+user.getUser_name());
 			nsp.getBroadcastOperations().sendEvent("join", client, user);
 			nsp.getBroadcastOperations().sendEvent("online-users", chatUsers);
 		}

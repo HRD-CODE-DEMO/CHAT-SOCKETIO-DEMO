@@ -3,15 +3,128 @@
 <head>
 <meta charset="utf-8">
 <title>Online Users</title>
-<link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="/static/css/chat-box.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style type="text/css">
+	#header{
+		height: 100px;
+		padding-top:30px;
+		background-color: #bdc3c7;
+		color:#fff;
+	}
+	.col-center{
+		float:none;
+		margin: 0 auto;
+	}
+	.my-container{
+		width:50%;
+	}
+	.online{
+		color:blue;
+	}
+</style>
 </head>
+
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid my-container">
 		<div class="row">
-			<div class="col-md-12">
-			<h2>Online Users</h2>
+			<div class="col-md-10 col-center">
+			<h1 align="center" id="header">Online Users</h1>
+			<table class="table table-hover" id="my-table">
+			</table>
 			</div>
 		</div>
 	</div>
+
+<!-- chat box -->
+<div class="popup-box chat-popup" id="qnimate">
+    		  <div class="popup-head">
+				<div class="popup-head-left pull-left">Pawan Pandey</div>
+					  <div class="popup-head-right pull-right">
+						<div class="btn-group">
+    								  <button class="chat-header-button" data-toggle="dropdown" type="button" aria-expanded="false">
+									   <i class="glyphicon glyphicon-cog"></i> </button>
+									  <ul role="menu" class="dropdown-menu pull-right">
+										<li><a href="#">Media</a></li>
+										<li><a href="#">Block</a></li>
+										<li><a href="#">Clear Chat</a></li>
+										<li><a href="#">Email Chat</a></li>
+									  </ul>
+						</div>
+						
+						<button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-off"></i></button>
+                      </div>
+			  </div>
+			<div class="popup-messages">
+			<div class="direct-chat-messages">
+					<div class="chat-box-single-line">
+								<abbr class="timestamp">October 10th, 2013</abbr>
+					</div>			
+					<!-- Message. Default to the left -->
+                    <div class="direct-chat-msg doted-border">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-left">Sujeet</span>
+                      </div>
+                      <!-- /.direct-chat-info -->
+                      <img alt="message user image" src="https://media.licdn.com/mpr/mpr/shrink_100_100/p/2/005/0b3/123/319cbe7.jpg" class="direct-chat-img"><!-- /.direct-chat-img -->
+                      <div class="direct-chat-text">
+                        Hey bro, how’s everything going ?
+                      </div>
+					  <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-timestamp pull-right">4.30 PM</span>
+                      </div>
+						<div class="direct-chat-info clearfix">
+						<span class="direct-chat-img-reply-small pull-left">
+							
+						</span>
+						<span class="direct-chat-reply-name">Thakur</span>
+						</div>
+                      <!-- /.direct-chat-text -->
+                    </div>
+                    <!-- /.direct-chat-msg -->
+
+					<div class="chat-box-single-line">
+						<abbr class="timestamp">October 12th, 2013</abbr>
+					</div>
+
+					<!-- Message. Default to the left -->
+                    <div class="direct-chat-msg doted-border">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-left">Sujeet</span>
+                      </div>
+                      <!-- /.direct-chat-info -->
+                      <img alt="message user image" src="https://media.licdn.com/mpr/mpr/shrink_100_100/p/2/005/0b3/123/319cbe7.jpg" class="direct-chat-img"><!-- /.direct-chat-img -->
+                      <div class="direct-chat-text">
+                        Hey bro, how’s everything going ?
+                      </div>
+					  <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-timestamp pull-right">4.30 PM</span>
+                      </div>
+						<div class="direct-chat-info clearfix">
+						  <img alt="" src="" class="direct-chat-img big-round">
+						<span class="direct-chat-reply-name">Thakur</span>
+						</div>
+                      <!-- /.direct-chat-text -->
+                    </div>
+                    <!-- /.direct-chat-msg -->
+
+                  </div>
+			</div>
+			<div class="popup-messages-footer">
+			<textarea id="status_message" placeholder="Type a message..." rows="10" cols="20" name="message"></textarea>
+			 <!-- <div class="btn-footer">
+			<button class="bg_none"><i class="glyphicon glyphicon-film"></i> </button>
+			<button class="bg_none"><i class="glyphicon glyphicon-camera"></i> </button>
+            <button class="bg_none"><i class="glyphicon glyphicon-paperclip"></i> </button>
+			<button class="bg_none pull-right"><i class="glyphicon glyphicon-thumbs-up"></i> </button>
+			</div>  -->
+			</div>
+	  </div>
+
+<!-- Script -->
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/socketio/socket.io.js"></script>
+<script src="/static/js/chat.js"></script>
+
 </body>
 </html>
