@@ -1,27 +1,20 @@
 package com.saravit.model;
 
-import java.util.UUID;
-
 public class Message {
-	private UUID clientSourceID;
-	private UUID clientTargetID;
+	private int clientSourceID;
+	private int clientTargetID;
 	private String msg;
-	public Message(UUID clientSourceID, UUID clientTargetID, String msg) {
-		super();
-		this.clientSourceID = clientSourceID;
-		this.clientTargetID = clientTargetID;
-		this.msg = msg;
-	}
-	public UUID getClientSourceID() {
+	
+	public int getClientSourceID() {
 		return clientSourceID;
 	}
-	public void setClientSourceID(UUID clientSourceID) {
+	public void setClientSourceID(int clientSourceID) {
 		this.clientSourceID = clientSourceID;
 	}
-	public UUID getClientTargetID() {
+	public int getClientTargetID() {
 		return clientTargetID;
 	}
-	public void setClientTargetID(UUID clientTargetID) {
+	public void setClientTargetID(int clientTargetID) {
 		this.clientTargetID = clientTargetID;
 	}
 	public String getMsg() {

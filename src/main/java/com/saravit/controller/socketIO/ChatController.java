@@ -53,6 +53,8 @@ public class ChatController {
 		public void onData(SocketIOClient client, Message msg, AckRequest ack) throws Exception {
 			// TODO Auto-generated method stub
 			nsp.getBroadcastOperations().sendEvent("message", client, msg);
+			User u=chatUsers.get(client);		
+			System.out.println("Send Message From /User:"+u.getUser_id()+" ,"+u.getUser_name());
 			System.out.println("Chat /chat namspace:"+msg);
 			ack.sendAckData("Message sent!");
 		}

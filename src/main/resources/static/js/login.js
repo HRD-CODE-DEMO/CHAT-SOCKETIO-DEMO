@@ -1,5 +1,6 @@
 /**
- * 
+ * Date: 17/06/2017
+ * Author: Soeng Saravit
  */
 
 $("#btn-join").on('click',function(user){
