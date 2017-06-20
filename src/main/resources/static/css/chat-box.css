@@ -110,20 +110,16 @@ body
     width: 21px;
 }
 
-
-
-
-
 .popup-box .popup-messages {
     background: #eff5f5 none repeat scroll 0 0;
     height: 310px;
     overflow: auto;
 }
 .direct-chat-messages {
+	height:310px;
     overflow: auto;
     padding: 10px;
-    transform: translate(0px, 0px);
-    
+    transform: translate(0px, 0px);   
 }
 .popup-messages .chat-box-single-line {
     border-bottom: 1px solid #a4c6b5;
@@ -174,7 +170,7 @@ body
     position: relative;
     text-align: center;
 }
-.popup-messages .direct-chat-messages {
+.popup-messages {
     height: auto;
 }
 .popup-messages .direct-chat-text {

@@ -1,5 +1,5 @@
 /**
- * Date: 17/06/2017
+ * Date : 17/06/2017
  * Author : Soeng Saravit
  */
 
@@ -67,15 +67,16 @@ $('#my-table').on('click','#addClass', function() {
 	$('#qnimate').addClass('popup-box-on');
 });
 	
- $("#removeClass").click(function () {
+$("#removeClass").click(function () {
     $('#qnimate').removeClass('popup-box-on');
- });
+});
  
- $("#txt-message").keyup(function(event){
+$("#txt-message").keyup(function(event){
 	 if(event.keyCode == 13){
 		 var m = $("#txt-message").val();
 		 sourceMessage(m);
 		 $("#txt-message").val("");
+		 
 		 var message = {
 				 clientSourceID: id,
 				 clientTargetID: target_id,
@@ -90,14 +91,21 @@ $('#my-table').on('click','#addClass', function() {
  function sourceMessage(msg){
 	 var element = "<div class='source-message'>"+msg+"</div>";
 	 $("#message-box").append(element);
+	 autoScrollToBottom();
  }
  
  function getMessage(message){
 	 var element = "<div class='sender-message'>"+message+"</div>";
 	 $("#message-box").append(element);
 	 $('#qnimate').addClass('popup-box-on');
+	 autoScrollToBottom();
  }  
-	 
+
+ function autoScrollToBottom(){
+	 var wtf    = $('.direct-chat-messages');
+	 var height = wtf[0].scrollHeight;
+	 wtf.scrollTop(height);
+ }
 
 //--------------Generate UUID-----------------------
  
